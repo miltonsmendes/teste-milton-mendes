@@ -1,0 +1,57 @@
+.leaflet-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    position: absolute;
+}
+
+.marker-icon-red {
+    background-color: #e74c3c;
+    width: 50px;
+    height: 50px;
+    display: block;
+    left: -12.5px;
+    top: -41px;
+    position: relative;
+    border-radius: 50% 50% 0;
+    transform: rotate(45deg);
+    border: 1px solid #FFFFFF;
+  }
+  
+  .marker-icon-green{
+    background-color: #2ecc71;
+    width: 25px;
+    height: 41px;
+    display: block;
+    left: -12.5px;
+    top: -41px;
+    position: relative;
+    border-radius: 50% 50% 0;
+    transform: rotate(45deg);
+    border: 1px solid #FFFFFF;
+  }
+  
+  .marker-icon-yellow {
+    background-color: #f1c40f;
+    width: 25px;
+    height: 41px;
+    display: block;
+    left: -12.5px;
+    top: -41px;
+    position: relative;
+    border-radius: 50% 50% 0;
+    transform: rotate(45deg);
+    border: 1px solid #FFFFFF;
+  }
+  
+  .marker-icon::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 7.5px;
+    top: 10px;
+    background-color: white;
+  }
+  
