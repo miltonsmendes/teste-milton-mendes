@@ -43,6 +43,19 @@
     transform: rotate(45deg);
     border: 1px solid #FFFFFF;
   }
+
+  .marker-icon-blue {
+    background-color: #3951cd;
+    width: 25px;
+    height: 41px;
+    display: block;
+    left: -12.5px;
+    top: -41px;
+    position: relative;
+    border-radius: 50% 50% 0;
+    transform: rotate(45deg);
+    border: 1px solid #FFFFFF;
+  }
   
   .marker-icon::after {
     content: "";
