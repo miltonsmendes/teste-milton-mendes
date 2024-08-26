@@ -34,10 +34,11 @@
     transform: translateX(0);
   }
   
-  .switch-label {
+  .switch-label-updated-position {
     margin-left: 10px;
-    font-size: 14px;
-    color: rgb(94, 6, 6);
+    font-size: 16px;
+    color: rgb(35, 35, 35);
     user-select: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
   }
   

@@ -21,7 +21,7 @@ export function SwitchButtonHistory({ initialState = false, onToggle }) {
         <div className="switch-button">
         </div>
       </div>
-          <span className="switch-label">{isOn ? 'On' : 'Off'}</span>
+          <span className="switch-label-history">{isOn ? 'Exibir historico de equipamento' : 'Nao exibir historico de equipamento'}</span>
     </>
   );
 }

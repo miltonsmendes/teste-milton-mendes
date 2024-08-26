@@ -4,7 +4,7 @@ import "./styles.css";
 
 export function DropdownButton({ options, onSelect }) {
     
-    const {selectedEquipament, selectEquipament} = useSelectedEquipament();
+    const {selectEquipament} = useSelectedEquipament();
 
 
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +26,7 @@ export function DropdownButton({ options, onSelect }) {
   return (
     <div className="dropdown-container">
       <button className="dropdown-button" onClick={toggleDropdown}>
-        {selectedOption || 'Selecione uma opção'}
+        {selectedOption || 'Selecione um equipamento'}
         <span className="dropdown-arrow">{isOpen ? '▲' : '▼'}</span>
       </button>
       {isOpen && (

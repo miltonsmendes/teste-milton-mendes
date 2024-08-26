@@ -110,7 +110,7 @@ export function Maps() {
             {isHistoryOn && equipmentFiltered?.positions?.map((position, index) => (
                 <Marker key={index} position={[position.lat, position.lon]} icon={blueIcon}>
 
-                <Popup>
+                <Popup offset={[0, -30]}>
                     {new Date(position.date).toLocaleDateString('pt-BR', {
                         day: '2-digit',
                         month: '2-digit',
@@ -119,6 +119,7 @@ export function Maps() {
                         minute: '2-digit',
                         })}
                 </Popup>
+
                 </Marker>
             ))}
 
@@ -128,7 +129,7 @@ export function Maps() {
                     position={equipment.position}
                     icon={equipment.stateId.color}
                 >
-                    <Popup>{equipment.name}</Popup>
+                    <Popup offset={[0, -30]}>{`${equipment.name}, Status: ${equipment.stateId.description}`}</Popup>
                 </Marker>
             ))}
         </MapContainer>

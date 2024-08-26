@@ -21,7 +21,7 @@ export function SwitchButtonUpdatedPosition({ initialState = false, onToggle }) 
       <div className="switch-button">
       </div>
     </div>
-        <span className="switch-label">{isOn ? 'On' : 'Off'}</span>
+        <span className="switch-label-updated-position">{isOn ? 'Exibir ultima posicao de todos os equipamentos' : 'Nao exibir ultima posicao de todos os equipamentos'}</span>
     </>
   );
 }
