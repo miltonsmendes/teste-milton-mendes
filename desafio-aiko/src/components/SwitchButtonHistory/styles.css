@@ -1,5 +1,5 @@
 .switch-container {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     cursor: pointer;
     background-color: #ccc;
@@ -8,6 +8,7 @@
     height: 30px;
     padding: 5px;
     transition: background-color 0.3s ease;
+    margin-bottom: 10px;
   }
   
   .switch-container.on {
@@ -39,6 +40,12 @@
     font-size: 16px;
     color: rgb(35, 35, 35);
     user-select: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-self: center;
   }
   
+  .container-switch-history{
+    display: flex;
+    flex-direction: row;
+  }
+

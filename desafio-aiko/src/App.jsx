@@ -2,6 +2,7 @@ import {Maps} from './components/Maps'
 import {DropdownButton} from "./components/DropdownButton"
 import {SwitchButtonHistory} from "./components/SwitchButtonHistory"
 import {SwitchButtonUpdatedPosition} from "./components/SwitchButtonUpdatedPosition"
+import {SwitchButtonShowPath} from './components/SwitchButtonShowPath'
 import {SelectedEquipamentProvider} from "./hook/useSelectedEquipament"
 import "./App.css";
 
@@ -15,12 +16,9 @@ function App() {
     <SelectedEquipamentProvider>
       <div className='appContainer'>
         <div className='container-history'>
-          <div>
             <DropdownButton options={equipment} />
-          </div>
-          <div>
             <SwitchButtonHistory />
-          </div>
+            <SwitchButtonShowPath />
         </div>
         <div className='container-recent-status'>
           <SwitchButtonUpdatedPosition />

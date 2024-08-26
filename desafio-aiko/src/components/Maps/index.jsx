@@ -1,5 +1,5 @@
 import { useSelectedEquipament } from '../../hook/useSelectedEquipament';
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import L from 'leaflet';
 
 import equipmentPositionHistory from "../../../../data/equipmentPositionHistory.json";
@@ -17,25 +17,25 @@ export function Maps() {
     const redIcon = new L.DivIcon({
         className: 'marker-icon-red marker-icon',
         iconSize: [25, 30],
-        iconAnchor: [12.5, 41],
+        iconAnchor: [25, 30],
     });
 
     const greenIcon = new L.DivIcon({
         className: 'marker-icon-green marker-icon',
         iconSize: [25, 30],
-        iconAnchor: [12.5, 41],
+        iconAnchor: [25, 30],
     });
 
     const yellowIcon = new L.DivIcon({
         className: 'marker-icon-yellow marker-icon',
         iconSize: [25, 30],
-        iconAnchor: [12.5, 41],
+        iconAnchor: [25, 30],
     });
 
     const blueIcon = new L.DivIcon({
         className: 'marker-icon-blue marker-icon',
         iconSize: [25, 30],
-        iconAnchor: [12.5, 41],
+        iconAnchor: [25, 30],
     });
 
     function setState(id) {
@@ -100,6 +100,8 @@ export function Maps() {
         };
     });
 
+    const polylinePositions = equipmentFiltered?.positions.map(position => [position.lat, position.lon]);
+
     return (
         <MapContainer center={[-19.03822, -45.856232]} zoom={13}>
             <TileLayer
@@ -108,19 +110,21 @@ export function Maps() {
             />
 
             {isHistoryOn && equipmentFiltered?.positions?.map((position, index) => (
-                <Marker key={index} position={[position.lat, position.lon]} icon={blueIcon}>
+                <>
+                    <Marker key={index} position={[position.lat, position.lon]} icon={blueIcon}>
 
-                <Popup offset={[0, -30]}>
-                    {new Date(position.date).toLocaleDateString('pt-BR', {
-                        day: '2-digit',
-                        month: '2-digit',
-                        year: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        })}
-                </Popup>
-
-                </Marker>
+                    <Popup offset={[-10, -25]}>
+                        {new Date(position.date).toLocaleDateString('pt-BR', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            })}
+                    </Popup>
+                    </Marker>
+                    <Polyline positions={polylinePositions} color="blue" />
+                </>
             ))}
 
             {isUpdatedPositionOn && mostRecentStatuses.map((equipment, index) => (
@@ -129,7 +133,7 @@ export function Maps() {
                     position={equipment.position}
                     icon={equipment.stateId.color}
                 >
-                    <Popup offset={[0, -30]}>{`${equipment.name}, Status: ${equipment.stateId.description}`}</Popup>
+                    <Popup offset={[-10, -25]}>{`${equipment.name}, Status: ${equipment.stateId.description}`}</Popup>
                 </Marker>
             ))}
         </MapContainer>

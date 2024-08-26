@@ -1,5 +1,6 @@
-.switch-container {
+.switch-container-show-path {
     display: flex;
+    flex-direction: row;
     align-items: center;
     cursor: pointer;
     background-color: #ccc;
@@ -10,11 +11,11 @@
     transition: background-color 0.3s ease;
   }
   
-  .switch-container.on {
+  .switch-container-show-path.on {
     background-color: #007bff;
   }
   
-  .switch-container.off {
+  .switch-container-show-path.off {
     background-color: #ccc;
   }
   
@@ -26,20 +27,24 @@
     transition: transform 0.3s ease;
   }
   
-  .switch-container.on .switch-button {
+  .switch-container-show-path.on .switch-button {
     transform: translateX(30px);
   }
   
-  .switch-container.off .switch-button {
+  .switch-container-show-path.off .switch-button {
     transform: translateX(0);
   }
   
-  .switch-label-updated-position {
+  .switch-label-show-path {
     margin-left: 10px;
     font-size: 16px;
     color: rgb(35, 35, 35);
     user-select: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     align-self: center;
+  }
+
+  .teste{
+    display: flex;
   }
   
