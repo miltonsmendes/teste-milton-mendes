@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelectedEquipament } from '../../hook/useSelectedEquipament';
 import "./styles.css";
 
-export function SwitchButton({ initialState = false, onToggle }) {
+export function SwitchButtonHistory({ initialState = false, onToggle }) {
   const [isOn, setIsOn] = useState(initialState);
   const {isHistoryOn, toggleHistory} = useSelectedEquipament();
 
@@ -17,13 +17,12 @@ export function SwitchButton({ initialState = false, onToggle }) {
 
   return (
     <>
-    <div className={`switch-container ${isOn ? 'on' : 'off'}`} onClick={toggleSwitch}>
-      <div className="switch-button">
+      <div className={`switch-container ${isOn ? 'on' : 'off'}`} onClick={toggleSwitch}>
+        <div className="switch-button">
+        </div>
       </div>
-    </div>
-        <span className="switch-label">{isOn ? 'On' : 'Off'}</span>
+          <span className="switch-label">{isOn ? 'On' : 'Off'}</span>
     </>
   );
 }
 
-export default SwitchButton;

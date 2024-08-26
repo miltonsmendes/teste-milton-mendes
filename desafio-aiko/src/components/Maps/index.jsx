@@ -32,34 +32,27 @@ import equipmentPositionHistory from "../../../../data/equipmentPositionHistory.
 
 export function Maps() {
 
-    const { selectedEquipament, isHistoryOn } = useSelectedEquipament();
-    // let equipmentPosition = [];
-
+    const { selectedEquipament, isHistoryOn, isUpdatedPositionOn } = useSelectedEquipament();
 
     const equipmentFiltered = equipmentPositionHistory.find(equipment => equipment.equipmentId === selectedEquipament);
 
 
-//     function findMostRecentPosition(positions){
-//         const mostRecentDate = positions.reduce((mostRecent, current) => {
-//             return new Date(current.date) > new Date(mostRecent) ? current.date : mostRecent;
-//         }, positions[0].date);
-//         const mostRecentPosition = positions.find(position => position.date === mostRecentDate);
+    const findMostRecentPosition = (positions) => {
+        const mostRecentPosition = positions.reduce((mostRecent, current) => {
+            return new Date(current.date) > new Date(mostRecent.date) ? current : mostRecent;
+        });
     
-//         return mostRecentPosition;
-//     };
+        return mostRecentPosition;
+    };
 
+    const mostRecentPositions = equipmentPositionHistory.map(equipment => {
+        const mostRecentPosition = findMostRecentPosition(equipment.positions);
+        return {
+            equipmentId: equipment.equipmentId,
+            position: mostRecentPosition,
+        };
+    });
 
-//    const mostRecentPositions = equipmentPositionHistory.map(equipment => {
-//         const positionIndex = findMostRecentPosition(equipment.positions)
-
-//         equipmentPosition.push({
-//             id: equipment.equipmentId, 
-//             position: [equipment.position[positionIndex].lat, equipment.position[positionIndex].lon]
-//         }) 
-//     })
-
-
-//     console.log(mostRecentPositions);
 
     return (
         <>
@@ -79,7 +72,21 @@ export function Maps() {
                             ))
                         )
                     )
-                : <></>
+                    : <></>
+                }
+                {
+                    isUpdatedPositionOn 
+                    ?
+                    mostRecentPositions.map((equipment, index) => (
+                        <Marker 
+                            key={index} 
+                            position={[equipment.position.lat, equipment.position.lon]} 
+                            // Caso queira usar um ícone personalizado, descomente as linhas abaixo:
+                            // icon={redIcon} 
+                        />
+                    ))
+                    
+                    : <></>
                 }
             </MapContainer>
         </>

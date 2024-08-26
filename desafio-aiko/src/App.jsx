@@ -1,6 +1,7 @@
 import {Maps} from './components/Maps'
 import {DropdownButton} from "./components/DropdownButton"
-import {SwitchButton} from "./components/SwitchButton"
+import {SwitchButtonHistory} from "./components/SwitchButtonHistory"
+import {SwitchButtonUpdatedPosition} from "./components/SwitchButtonUpdatedPosition"
 import {SelectedEquipamentProvider} from "./hook/useSelectedEquipament"
 
 
@@ -12,7 +13,8 @@ function App() {
   return (
     <SelectedEquipamentProvider>
       <DropdownButton options={equipment} />
-      <SwitchButton />
+      <SwitchButtonHistory />
+      <SwitchButtonUpdatedPosition />
       <Maps />
     </SelectedEquipamentProvider>
   )
