@@ -1,7 +1,7 @@
 import { useSelectedEquipament } from '../../hook/useSelectedEquipament';
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import L from 'leaflet';
-
+import MarkerClusterGroup from "react-leaflet-cluster"
 import equipmentPositionHistory from "../../../../data/equipmentPositionHistory.json";
 import equipmentStateHistory from "../../../../data/equipmentStateHistory.json";
 import equipmentData from "../../../../data/equipment.json";
@@ -10,7 +10,7 @@ import "./styles.css";
 import "leaflet/dist/leaflet.css";
 
 export function Maps() {
-    const { selectedEquipament, isHistoryOn, isUpdatedPositionOn } = useSelectedEquipament();
+    const { selectedEquipament, isHistoryOn, isUpdatedPositionOn, isShowPathOn } = useSelectedEquipament();
 
     const equipmentFiltered = equipmentPositionHistory.find(equipment => equipment.equipmentId === selectedEquipament);
 
@@ -109,23 +109,26 @@ export function Maps() {
                 url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
             />
 
-            {isHistoryOn && equipmentFiltered?.positions?.map((position, index) => (
-                <>
-                    <Marker key={index} position={[position.lat, position.lon]} icon={blueIcon}>
 
-                    <Popup offset={[-10, -25]}>
-                        {new Date(position.date).toLocaleDateString('pt-BR', {
-                            day: '2-digit',
-                            month: '2-digit',
-                            year: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit',
+            <MarkerClusterGroup>
+                {isHistoryOn && equipmentFiltered?.positions?.map((position, index) => (
+                    <Marker key={index} position={[position.lat, position.lon]} icon={blueIcon}>
+                        <Popup offset={[-10, -25]}>
+                            {new Date(position.date).toLocaleDateString('pt-BR', {
+                                day: '2-digit',
+                                month: '2-digit',
+                                year: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit',
                             })}
-                    </Popup>
+                        </Popup>
                     </Marker>
-                    <Polyline positions={polylinePositions} color="blue" />
-                </>
-            ))}
+                ))}
+            </MarkerClusterGroup>
+
+            {isShowPathOn && polylinePositions && (
+                <Polyline positions={polylinePositions} color="blue" />
+            )}
 
             {isUpdatedPositionOn && mostRecentStatuses.map((equipment, index) => (
                 <Marker

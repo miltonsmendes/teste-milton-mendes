@@ -16,7 +16,7 @@ export function SwitchButtonShowPath({ initialState = false, onToggle }) {
   };
 
   return (
-    <div className='teste'>
+    <div className='container-show-path'>
       <div className={`switch-container-show-path ${isOn ? 'on' : 'off'}`} onClick={toggleSwitch}>
         <div className="switch-button" />
       </div>
