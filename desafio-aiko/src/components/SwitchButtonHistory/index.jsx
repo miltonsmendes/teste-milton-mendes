@@ -20,7 +20,7 @@ export function SwitchButtonHistory({ initialState = false, onToggle }) {
       <div className={`switch-container ${isOn ? 'on' : 'off'}`} onClick={toggleSwitch}>
         <div className="switch-button" />
       </div>
-        <span className="switch-label-history">{isOn ? 'Exibir historico de equipamento' : 'Nao exibir historico de equipamento'}</span>
+        <span className="switch-label-history">{isOn ? 'Exibir histórico de equipamento' : 'Não exibir histórico de equipamento'}</span>
     </div>
   );
 }

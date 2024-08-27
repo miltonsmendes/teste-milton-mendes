@@ -20,7 +20,7 @@ export function SwitchButtonShowPath({ initialState = false, onToggle }) {
       <div className={`switch-container-show-path ${isOn ? 'on' : 'off'}`} onClick={toggleSwitch}>
         <div className="switch-button" />
       </div>
-      <span className="switch-label-show-path">{isOn ? 'Exibir trajeto do equipamento' : 'Nao exibir trajeto do equipamento'}</span>
+      <span className="switch-label-show-path">{isOn ? 'Exibir trajeto do equipamento' : 'Não exibir trajeto do equipamento'}</span>
     </div>
   
   );

@@ -88,7 +88,7 @@ export function Maps() {
             resultState = equipmentState.states.find(({ date }) => date === mostRecentDateStateHistory);
 
             const equipmentInfo = equipmentData.find(equipment => equipmentState.equipmentId === equipment.id);
-            name = equipmentInfo?.name || "Unknown";
+            name = equipmentInfo?.name;
         }
 
         return {

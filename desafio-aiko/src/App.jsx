@@ -11,14 +11,13 @@ import equipment from '../../data/equipment.json';
 
 function App() {
 
-
   return (
     <SelectedEquipamentProvider>
       <div className='appContainer'>
         <div className='container-history'>
-            <DropdownButton options={equipment} />
-            <SwitchButtonHistory />
-            <SwitchButtonShowPath />
+          <DropdownButton options={equipment} />
+          <SwitchButtonHistory />
+          <SwitchButtonShowPath />
         </div>
         <div className='container-recent-status'>
           <SwitchButtonUpdatedPosition />

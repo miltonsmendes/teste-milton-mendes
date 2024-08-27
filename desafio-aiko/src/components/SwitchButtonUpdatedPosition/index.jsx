@@ -17,10 +17,10 @@ export function SwitchButtonUpdatedPosition({ initialState = false, onToggle }) 
 
   return (
     <>
-    <div className={`switch-container ${isOn ? 'on' : 'off'}`} onClick={toggleSwitch}>
-      <div className="switch-button" />
-    </div>
-        <span className="switch-label-updated-position">{isOn ? 'Exibir ultima posicao de todos os equipamentos' : 'Nao exibir ultima posicao de todos os equipamentos'}</span>
+      <div className={`switch-container ${isOn ? 'on' : 'off'}`} onClick={toggleSwitch}>
+        <div className="switch-button" />
+      </div>
+        <span className="switch-label-updated-position">{isOn ? 'Exibir última posição de todos os equipamentos' : 'Não exibir última posição de todos os equipamentos'}</span>
     </>
   );
 }
