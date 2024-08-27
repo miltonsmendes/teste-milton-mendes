@@ -2,7 +2,7 @@
 
 ![Aiko](img/aiko.png)
 
-Neste teste, serão avaliados seus conhecimentos em Javascript, HTML e CSS, a criatividade e metodologia aplicadas no desenvolvimento, a usabilidade e design da aplicação final.
+Neste teste, serão avaliados seus conhecimentos em Javascript, HTML e CSS, além da criatividade e metodologia aplicadas no desenvolvimento, usabilidade e design da aplicação final.
 
 ## O Desafio
 
@@ -21,8 +21,15 @@ Esses requisitos são obrigatórios e devem ser desenvolvidos para a entrega do 
 ## O que foi feito
 * Desenvolvido um painel para exibir e esconder informações de acordo com a preferência do usuário.
 * Ícones personalizados.
-* Adição de cluster para melhor visualizar múltiplos equipamentos no mapa.
+* Adição de cluster para melhor visualização de múltiplos equipamentos no mapa.
 * Adição de opção para mostrar a trajetória do equipamento.
+
+## O que foi utilizado
+* React.JS
+* Vite (Utilizado para criar/gerenciar/rodar o projeto em React)
+* CSS
+* Leaflet (Utilizado por ser gratuito e possuir boa documentação)
+* Eslint (Padrão Rocketseat)
 
 ## Desafios encontrados no teste
 * Correlacionar a última data dos equipamentos em diferentes tabelas.
