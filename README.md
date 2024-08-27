@@ -35,13 +35,14 @@ Esses requisitos são obrigatórios e devem ser desenvolvidos para a entrega do 
 ![image](https://github.com/user-attachments/assets/1211ab88-be3e-43ff-9e6e-0e9d8dedd741)
 ![image](https://github.com/user-attachments/assets/697cc0af-ba5f-4b93-a9db-3d864a87d7f0)
 
-* 
+
 ## Como iniciar o desenvolvimento
 
 Rodar frontend:
 ```
 * Instale o [npm](https://nodejs.org/en/download/)
 * Faça o clone do projeto
+* Acesse a branch teste/milton-mendes
 * Instale as dependências com npm install na pasta desafio-aiko
 * Use npm run dev/yarn start na pasta desafio-aiko para iniciar o projeto.
 * Acesse http://localhost:3000
