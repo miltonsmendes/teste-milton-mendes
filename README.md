@@ -19,14 +19,14 @@ Esses requisitos são obrigatórios e devem ser desenvolvidos para a entrega do 
 * **Histórico de estados do equipamento**: Permitir a visualização do histórico de estados de um equipamento específico ao clicar sobre o equipamento.
 
 ## O que foi feito
-* Desenvolvido um painel para exibir e esconde informacoes de acordo com a preferencia do usuario
-* Icones personalizado
-* Adicao de cluster para melhor vizualizar multiplos equipamentos no mapa
-* Adicao de opcao para mostrar trajetoria do equipamento
+* Desenvolvido um painel para exibir e esconder informações de acordo com a preferência do usuário.
+* Ícones personalizados.
+* Adição de cluster para melhor visualizar múltiplos equipamentos no mapa.
+* Adição de opção para mostrar a trajetória do equipamento.
 
 ## Desafios encontrados no teste
-* Correlacionar a última data dos equipamentos em diferentes tabelas
-* Personalizar ícones
+* Correlacionar a última data dos equipamentos em diferentes tabelas.
+* Personalizar ícones.
 
 ## Imagens do layout
 ![image](https://github.com/user-attachments/assets/8affd603-7a3b-4d9d-9d8c-0152c306b840)
